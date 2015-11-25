@@ -2,6 +2,8 @@
 
 This is a simple example library serving as a guide on how to implement an oracle (aka data provider) with the current Ethereum infrastructure.
 
+What are data providers? Essentially Ethereum contracts run in their own wallet garden. They can communicate with each other, can save and retrieve data stored on the blockchain, but external data can only enter the system by interaction from the user (e.g. passing data to a method). Data providers (or oracles) are contracts which have a connection to the outside world. Other contracts can request outside data from them. For example making HTTP GET/POST transactions.
+
 ## Use case
 
 For example you want to enable your contract to query for external data, you might do the following (in Solidity):
