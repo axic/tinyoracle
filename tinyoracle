@@ -70,9 +70,8 @@ function pollForEvents(filterId) {
       }
 
       // Look for our event
-      // FIXME: eventID might be wrongly calculated?
-      if (event.topics[0] !== abi.common.eventID('Incoming', [ 'uint256', 'address', 'bytes' ])) {
-        //continue; // Not ours
+      if (event.topics[0] !== ('0x' + abi.common.eventID('Incoming', [ 'uint256', 'address', 'bytes' ]).toString('hex'))) {
+        continue; // Not ours
       }
 
       // Parse non-indexed event arguments
