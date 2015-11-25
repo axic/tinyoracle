@@ -75,13 +75,19 @@ Interval above is the frequency of polling for incoming requests, where 10 means
 
 8. Next steps: further improve TinyOracle and send a pull request.
 
-## Important
+## Important notes
 
 As you are sending responses back as a transaction, which costs ether, it would make sense to charge the clients a fee.
 
 **This code is not intended for use in production.** Any failure to process the event can mean it is lost forever and a response will never be sent. It is suggested to store the received events in a database and process the responses in a separate thread or application.
 
 Offering data through this toolkit to the public will not make it a trusted source. Your user can trust it as long as it trusts you and that the lookup contract is controlled by you.
+
+## Future improvements
+
+1. Received events should be stored in a queue or database and processed asynchronously.
+
+2. There should be a storage for requests in the dispatcher, so that in case of RPC errors, events can still be recalled. This has a cost on storage.
 
 ## Under the hood
 
