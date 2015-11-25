@@ -46,6 +46,8 @@ Interval above is the frequency of polling for incoming requests, where 10 means
 
 As you are sending responses back as a transaction, which costs ether, it would make sense to charge the clients a fee.
 
+**This code is not intended for use in production.** Any failure to process the event can mean it is lost forever and a response will never be sent. It is suggested to store the received events in a database and process the responses in a separate thread or application.
+
 ## Under the hood
 
 TinyOracle is running on **Node.js** and uses [json-rpc2](https://github.com/pocesar/node-jsonrpc2) to communicate with the Ethereum RPC endpoint. Data is decoded and encoded using [ethereumjs-abi](https://github.com/axic/ethereumjs-abi).
