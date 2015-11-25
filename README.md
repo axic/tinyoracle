@@ -2,6 +2,37 @@
 
 This is a simple example library serving as a guide on how to implement an oracle (aka data provider) with the current Ethereum infrastructure.
 
+## Use case
+
+For example you want to enable your contract to query for external data, you might do the following (in Solidity):
+
+```js
+import "api.sol";
+
+contract SampleClient is usingTinyOracle {
+  bytes public response;
+
+  function __tinyOracleCallback(uint256 id, bytes _response) onlyFromTinyOracle external {
+    response = _response;
+  }
+
+  function query() {
+    string memory tmp = "hello world";
+    query(bytes(tmp));
+  }
+
+  function query(bytes query) {
+    queryTinyOracle(query);
+  }
+}
+```
+
+Whenever a query is submitted to ```queryTinyOracle```, it will end up being caught by a server side listener. After processing, the response will be sent back to a specific method (the above ```__tinyOracleCallback```) of the querying contract.
+
+```queryTinyOracle``` will return a uin256 identifier and the same will be available in the ```__tinyOracleCallback```. This is a unique transaction id to enable running multiple calls from a client, because the whole process is asynchronous.
+
+## Solution
+
 It is a fairly simple concept:
 - Listen for specific events
 - Transact with the caller
