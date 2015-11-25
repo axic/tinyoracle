@@ -1,0 +1,32 @@
+{
+  "name": "tinyoracle",
+  "version": "0.1.0",
+  "description": "Simple data provider toolkit for Ethereum",
+  "main": "index.js",
+  "dependencies": {
+    "ethereumjs-abi": "^0.1.0",
+    "json-rpc2" : "^1.0.0"
+  },
+  "bin": {
+    "tinyoracle": "tinyoracle"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axic/tinyoracle.git"
+  },
+  "keywords": [
+    "ethereum",
+    "oracle",
+    "data provider",
+    "toolkit"
+  ],
+  "author": "Alex Beregszaszi <alex@rtfs.hu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/axic/tinyoracle/issues"
+  },
+  "homepage": "https://github.com/axic/tinyoracle"
+}
