@@ -12,7 +12,8 @@ contract SampleClient is usingTinyOracle {
   }
 
   function query() {
-    query("hello world");
+    string memory tmp = "hello world";
+    query(bytes(tmp));
   }
 
   function query(bytes query) {
