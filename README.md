@@ -48,6 +48,8 @@ As you are sending responses back as a transaction, which costs ether, it would 
 
 **This code is not intended for use in production.** Any failure to process the event can mean it is lost forever and a response will never be sent. It is suggested to store the received events in a database and process the responses in a separate thread or application.
 
+Offering data through this toolkit to the public will not make it a trusted source. Your user can trust it as long as it trusts you and that the lookup contract is controlled by you.
+
 ## Under the hood
 
 TinyOracle is running on **Node.js** and uses [json-rpc2](https://github.com/pocesar/node-jsonrpc2) to communicate with the Ethereum RPC endpoint. Data is decoded and encoded using [ethereumjs-abi](https://github.com/axic/ethereumjs-abi).
