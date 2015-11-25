@@ -8,7 +8,7 @@ It is a fairly simple concept:
 
 To accomplish this we need the following:
 - A node accessible with RPC
-- A handful of contracts, one of them being the endpoint for on-chain transactions and emitting an event
+- A handful of contracts, one of them being our trusted the endpoint for on-chain transactions and emitting an event
 - Listening to that specific event over RPC
 - Sending back a transaction to a pre-agreed method in the caller contract
 - *Job done.*
