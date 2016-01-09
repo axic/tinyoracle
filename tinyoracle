@@ -32,9 +32,9 @@ if (program.rpchost === undefined) {
 }
 
 var opts = {
-  rpc_port: program.rpcport | 8545,
+  rpc_port: program.rpcport || 8545,
   rpc_host: program.rpchost,
-  check_interval: (program.interval | 10) * 1000,
+  check_interval: (program.interval || 10) * 1000,
   dispatch_address: program.dispatch,
   sender_address: program.sender,
 };
